@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.purple {
+    color: #7f58ad !important;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header .title {
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+.header .logo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.toggle-checkbox:checked~.sidebar {
+    left: 0;
+}
+
+.sidebar {
+    width: 15%;
+    height: 100%;
+    background-color: #333;
+    position: fixed;
+    display: grid;
+    left: -250px;
+    transition: left 0.3s;
+    z-index: 1;
+
+}
+
+.navbar {
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.navbar a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    border-bottom: #7f58ad 2px solid;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.toggle-checkbox:checked~.content {
+    margin-left: 250px;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+
+.toggle-label {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    outline: none;
+}
+
+.content {
+    margin-left: 10px;
+    transition: margin-left 0.3s;
+    width: 100%;
+}
+
+.sidebar-opened .content {
+    margin-left: 250px;
+}
+
+.hamburger-btn {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    outline: none;
+}
+
+
+.content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.body {
+    flex-grow: 1;
+    display: flex;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-social-icons a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+/* styling table page*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    overflow: scroll;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+/* Styling untuk form */
+form {
+    max-width:500px;
+    margin: 0 auto; 
+    padding: 20px;
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background: #555;
+}
+
+/*media querry */
+@media screen and (max-width: 600px) {
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        display: block; 
+        text-align: center; 
+    }
+
+    th {
+        display: none;
+    }
+    form {
+        max-width: 100%; 
+        padding: 10px; 
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    button[type="submit"] {
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .toggle-label {
+        font-size: 36px;
+    }
+
+    .toggle-checkbox:checked~.content {
+        margin-left: 0;
+    }
+
+    .toggle-checkbox:checked~.sidebar {
+        left: 0;
+        transition: left 0.3s;
+        z-index: 1;
+    }
+
+
+    .toggle-checkbox:checked+.sidebar {
+        left: 0;
+        transition: left 0.3s;
+        z-index: 1;
+    }
+}
