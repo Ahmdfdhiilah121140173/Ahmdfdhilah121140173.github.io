@@ -1,8 +1,10 @@
-
 const productForm = document.getElementById('productForm');
+const successModal = document.getElementById('successModal');
+const closeSuccessModal = document.getElementById('closeSuccessModal');
+
 productForm.addEventListener('submit', function (e) {
     e.preventDefault(); 
-
+    successModal.classList.add('active');
     const id = document.getElementById('id').value;
     const title = document.getElementById('title').value;
     const description = document.getElementById('description').value;
@@ -30,4 +32,8 @@ productForm.addEventListener('submit', function (e) {
     existingProducts.push(product);
     localStorage.setItem('products', JSON.stringify(existingProducts));
     productForm.reset();
+});
+
+closeSuccessModal.addEventListener('click', function () {
+    successModal.classList.remove('active');
 });
